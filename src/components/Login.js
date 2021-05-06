@@ -28,7 +28,7 @@ export function Login() {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <div>{error && JSON.stringify(error)}</div>
+        <div>{error && JSON.parse(JSON.stringify(error.message))}</div>
 
         <label htmlFor="input-email">Email</label>
         <input id="input-email" type="email" ref={emailRef} />
