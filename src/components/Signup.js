@@ -33,6 +33,7 @@ export function Signup() {
 
   return (
     <>
+    <h1>Sign up</h1>
       <form onSubmit={handleSubmit}>
         <div><p>{error && JSON.parse(JSON.stringify(error.message))}</p></div>
 

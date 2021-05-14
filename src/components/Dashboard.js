@@ -16,6 +16,7 @@ export function Dashboard() {
 
   return (
     <div>
+      <h1>Dashboard</h1>
       <p>Welcome, {user?.id}!</p>
       <button onClick={handleSignOut}>Sign out</button>
     </div>
