@@ -9,20 +9,26 @@ export function Signup() {
 
   const [error, setError] = useState(null)
 
+  // Get signUp function from the auth context
   const { signUp } = useAuth()
   const history = useHistory()
 
   async function handleSubmit(e) {
     e.preventDefault()
 
+    // Get email and password input values
     const email = emailRef.current.value
     const password = passwordRef.current.value
 
+    // Calls `signUp` function from the context
     const { error } = await signUp({ email, password })
 
-    if (error) return setError(error)
-
-    history.push('/')
+    if (error) {
+      setError(error)
+    } else {
+      // Redirect user to Dashboard
+      history.push('/')
+    }
   }
 
   return (
